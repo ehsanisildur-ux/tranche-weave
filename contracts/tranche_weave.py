@@ -163,6 +163,9 @@ class TrancheWeave(gl.Contract):
 
     @gl.public.write
     def transfer(self, recipient: str, amount: int) -> None:
+        # CLI address literals are encoded as Address, while SDK clients may send strings.
+        if isinstance(recipient, Address):
+            recipient = str(recipient)
         if not isinstance(recipient, str) or not re.fullmatch(r"0x[0-9a-fA-F]{40}", recipient) or int(recipient, 16) == 0 or type(amount) is not int or amount <= 0:
             fail("[EXPECTED] Invalid transfer")
         sender, target = gl.message.sender_address, Address(recipient)
@@ -176,6 +179,8 @@ class TrancheWeave(gl.Contract):
 
     @gl.public.view
     def balance_of(self, account: str) -> int:
+        if isinstance(account, Address):
+            account = str(account)
         if not isinstance(account, str) or not re.fullmatch(r"0x[0-9a-fA-F]{40}", account):
             fail("[EXPECTED] Invalid account")
         return int(self.balances.get(Address(account), 0))
