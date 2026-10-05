@@ -1,0 +1,189 @@
+{
+  "hash": "0xe1661c6e155f846f01f78fa17cfdccbe46a752cacce726f3cfc9b3e3214913f3",
+  "from_address": "0xAa01eECb17d2F8B55A5f7cE13ec0E25884D15921",
+  "to_address": "0x0A667ea5Ad30d54E4BF8Ab906B9e2C4f1622388a",
+  "data": {
+    "calldata": {
+      "readable": "{\"args\":[1,\"https://raw.githubusercontent.com/ehsanisildur-ux/tranche-weave/17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560/records/restore-failed.md\",\"393ee4a5e8e3bb18b1be22eb89ab2dffb85f9de426b47d68f5c09b5d9383ec1c\",]\"method\":\"evaluate\"}"
+    }
+  },
+  "status": 7,
+  "result": 6,
+  "consensus_data": {
+    "votes": {
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "idle",
+      "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+      "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "idle",
+      "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
+      "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "agree"
+    },
+    "leader_receipt": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "leader",
+        "vote": null,
+        "calldata": {
+          "readable": "{\"args\":[1,\"https://raw.githubusercontent.com/ehsanisildur-ux/tranche-weave/17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560/records/restore-failed.md\",\"393ee4a5e8e3bb18b1be22eb89ab2dffb85f9de426b47d68f5c09b5d9383ec1c\",]\"method\":\"evaluate\"}"
+        },
+        "eq_outputs": {
+          "0": {
+            "status": "return",
+            "payload": {
+              "readable": "{\"checks\":[{\"decision\":\"NOT_MET\"\"id\":\"restore\"\"quote\":\"The completed Beacon v1 restoration exercise lost seven archived records; those records were missing from the restored archive.\"},{\"decision\":\"NOT_MET\"\"id\":\"verification\"\"quote\":\"The Beacon v1 restored archive failed its completed integrity verification against the original manifest.\"},]}"
+            }
+          }
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree",
+        "calldata": {
+          "readable": "{\"args\":[1,\"https://raw.githubusercontent.com/ehsanisildur-ux/tranche-weave/17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560/records/restore-failed.md\",\"393ee4a5e8e3bb18b1be22eb89ab2dffb85f9de426b47d68f5c09b5d9383ec1c\",]\"method\":\"evaluate\"}"
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      }
+    ],
+    "validators": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "Validator execution cancelled after quorum",
+          "stdout": "",
+          "raw_error": {
+            "fatal": false,
+            "causes": [
+              "VALIDATOR_QUORUM_REACHED"
+            ]
+          },
+          "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+        },
+        "mode": "validator",
+        "vote": "idle"
+      },
+      {
+        "execution_result": "ERROR",
+        "genvm_result": {
+          "stderr": "Validator execution cancelled after quorum",
+          "stdout": "",
+          "raw_error": {
+            "fatal": false,
+            "causes": [
+              "VALIDATOR_QUORUM_REACHED"
+            ]
+          },
+          "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+        },
+        "mode": "validator",
+        "vote": "idle"
+      }
+    ]
+  },
+  "gaslimit": 5,
+  "nonce": 5,
+  "created_at": "2026-10-05T06:50:31.799874+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "origin_address": "0xAa01eECb17d2F8B55A5f7cE13ec0E25884D15921",
+  "triggered_on": null,
+  "appeal_validators_timeout": false,
+  "sim_config": {
+    "signed_rollup_transaction": "0xf9022905808307a12094b7278a61aa25c888815afc32ad3cc52ff24fe57580b901c427241a99000000000000000000000000aa01eecb17d2f8b55a5f7ce13ec0e25884d159210000000000000000000000000a667ea5ad30d54e4bf8ab906b9e2c4f1622388a0000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000e3f8e1b8de1604617267731d09940868747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f656873616e6973696c6475722d75782f7472616e6368652d77656176652f313764303734623564386536653739663331336131656263356336633266636466303635363536302f7265636f7264732f726573746f72652d6661696c65642e6d64840433393365653461356538653362623138623162653232656238396162326466666238356639646534323662343764363866356330396235643933383365633163066d6574686f64446576616c756174650000000000000000000000000000000000000000000000000000000000008301e482a01b0446151e1ec4567642f7e228131d47c3d30029333661ce944ddf41d60bd3e4a05d367a73eb0f85ea9a11dabf569eb2834d3652ba0aec4df9bb83861b2e537f97"
+  },
+  "value_credited": false,
+  "sender": "0xAa01eECb17d2F8B55A5f7cE13ec0E25884D15921",
+  "recipient": "0x0A667ea5Ad30d54E4BF8Ab906B9e2C4f1622388a",
+  "tx_id": "0xe1661c6e155f846f01f78fa17cfdccbe46a752cacce726f3cfc9b3e3214913f3",
+  "activator": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3",
+  "last_leader": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3",
+  "result_name": "MAJORITY_AGREE",
+  "num_of_rounds": "1",
+  "last_round": {
+    "round": "0",
+    "leader_index": "0",
+    "votes_committed": "5",
+    "votes_revealed": "5",
+    "appeal_bond": "0",
+    "rotations_left": "3",
+    "result": 6,
+    "round_validators": [
+      "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3",
+      "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8",
+      "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE",
+      "0x76c25AFC12c75485703cCFfd0083AA6201455B25",
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+    ],
+    "validator_votes_hash": [
+      "0xf2bf6cc6798686574c2a7afa5fe4c530519a24f0c4990d510c4fa17303732375",
+      "0x9c198b3861c3abb01f6336cfa1e3b2ba2983f878e6a96f651b5a7dedf55cd9ad",
+      "0x56abff92b2502b8b401335a09897c632380a110e7b2effd8964db64dd35b7fe4",
+      "0x8e93c4bd1a46c34f86cee82a8deacd171121b5803f0ddfff4f1b10b7838c91c2",
+      "0x5c71a6747605cd90794a857a745202c78f96dcd48c0e0af04a7ba8ba0edb4006"
+    ],
+    "validator_votes": [
+      1,
+      1,
+      1,
+      5,
+      5
+    ],
+    "validator_votes_name": [
+      "AGREE",
+      "AGREE",
+      "AGREE",
+      "IDLE",
+      "IDLE"
+    ]
+  },
+  "type": 2,
+  "status_name": "FINALIZED"
+}

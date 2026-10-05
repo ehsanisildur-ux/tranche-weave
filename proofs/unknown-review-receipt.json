@@ -1,0 +1,181 @@
+{
+  "hash": "0x641f35ca19204f888cb29806add5b3ae0a51a0d6a9f1c36d681a6eff1d7d8cef",
+  "from_address": "0xAa01eECb17d2F8B55A5f7cE13ec0E25884D15921",
+  "to_address": "0x0A667ea5Ad30d54E4BF8Ab906B9e2C4f1622388a",
+  "data": {
+    "calldata": {
+      "readable": "{\"args\":[0,\"https://raw.githubusercontent.com/ehsanisildur-ux/tranche-weave/17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560/records/ambiguous.md\",\"6a201d962cfa77d413db45457fb6983b7eac521fcf297ba3ab120dddcb0b2394\",]\"method\":\"evaluate\"}"
+    }
+  },
+  "status": 7,
+  "result": 6,
+  "consensus_data": {
+    "votes": {
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+      "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "disagree",
+      "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+      "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "disagree",
+      "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree"
+    },
+    "leader_receipt": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "leader",
+        "vote": null,
+        "calldata": {
+          "readable": "{\"args\":[0,\"https://raw.githubusercontent.com/ehsanisildur-ux/tranche-weave/17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560/records/ambiguous.md\",\"6a201d962cfa77d413db45457fb6983b7eac521fcf297ba3ab120dddcb0b2394\",]\"method\":\"evaluate\"}"
+        },
+        "eq_outputs": {
+          "0": {
+            "status": "return",
+            "payload": {
+              "readable": "{\"checks\":[{\"decision\":\"UNKNOWN\"\"id\":\"release\"\"quote\":\"\"},{\"decision\":\"UNKNOWN\"\"id\":\"reproducible\"\"quote\":\"\"},]}"
+            }
+          }
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "disagree",
+        "calldata": {
+          "readable": "{\"args\":[0,\"https://raw.githubusercontent.com/ehsanisildur-ux/tranche-weave/17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560/records/ambiguous.md\",\"6a201d962cfa77d413db45457fb6983b7eac521fcf297ba3ab120dddcb0b2394\",]\"method\":\"evaluate\"}"
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      }
+    ],
+    "validators": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "disagree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      }
+    ]
+  },
+  "gaslimit": 2,
+  "nonce": 2,
+  "created_at": "2026-10-05T06:47:17.333009+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "origin_address": "0xAa01eECb17d2F8B55A5f7cE13ec0E25884D15921",
+  "triggered_on": null,
+  "appeal_validators_timeout": false,
+  "sim_config": {
+    "signed_rollup_transaction": "0xf9020902808307a12094b7278a61aa25c888815afc32ad3cc52ff24fe57580b901a427241a99000000000000000000000000aa01eecb17d2f8b55a5f7ce13ec0e25884d159210000000000000000000000000a667ea5ad30d54e4bf8ab906b9e2c4f1622388a0000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000def8dcb8d91604617267731d01ec0768747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f656873616e6973696c6475722d75782f7472616e6368652d77656176652f313764303734623564386536653739663331336131656263356336633266636466303635363536302f7265636f7264732f616d626967756f75732e6d64840436613230316439363263666137376434313364623435343537666236393833623765616335323166636632393762613361623132306464646362306232333934066d6574686f64446576616c756174650000008301e482a0421977b6da08f94698cd74ff382acb63010992931742f6bfe789fc879d2d4b2ba0439c4b40dae842090380512dce8f498b9c0da3018f5c014ae1e74cc76ceee3a8"
+  },
+  "value_credited": false,
+  "sender": "0xAa01eECb17d2F8B55A5f7cE13ec0E25884D15921",
+  "recipient": "0x0A667ea5Ad30d54E4BF8Ab906B9e2C4f1622388a",
+  "tx_id": "0x641f35ca19204f888cb29806add5b3ae0a51a0d6a9f1c36d681a6eff1d7d8cef",
+  "activator": "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100",
+  "last_leader": "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100",
+  "result_name": "MAJORITY_AGREE",
+  "num_of_rounds": "1",
+  "last_round": {
+    "round": "0",
+    "leader_index": "0",
+    "votes_committed": "5",
+    "votes_revealed": "5",
+    "appeal_bond": "0",
+    "rotations_left": "3",
+    "result": 6,
+    "round_validators": [
+      "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100",
+      "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE",
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+      "0x3E5ee2507cc167C9925Bf10c67D7986581112024",
+      "0xE6BD8050758CB15fC88387223E31Ae2708B119dC"
+    ],
+    "validator_votes_hash": [
+      "0x08bdeb39dbcde82eb97f2eae32e5dff5228c3ea1c5b43e42f197840e892eaef1",
+      "0x8a4e99a9b5d1b1c04ddee77f36c8a36a664001357e6ac127a57f8ad6c2b74eaa",
+      "0xafa554f32f5f5282cb18e5fb0ba9811849e3a0bbb5cbf26c8e5912c1e3528263",
+      "0x8c59f04c8c74d230f353f04f9e3353a3b3d6364e561a680ba51c840499d115ae",
+      "0x4f4407ed60c1d0bd974466d4ed0df0ec8eaccfaa1e4c64992865d4b6bdb641bb"
+    ],
+    "validator_votes": [
+      2,
+      2,
+      1,
+      1,
+      1
+    ],
+    "validator_votes_name": [
+      "DISAGREE",
+      "DISAGREE",
+      "AGREE",
+      "AGREE",
+      "AGREE"
+    ]
+  },
+  "type": 2,
+  "status_name": "FINALIZED"
+}

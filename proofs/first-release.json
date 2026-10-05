@@ -1,0 +1,159 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "contract_address": "0x0A667ea5Ad30d54E4BF8Ab906B9e2C4f1622388a",
+  "source_sha256": "e1103ce5adffb35f819f36c937a642c0a26855bf0a49c1d8835d80c713d6e118",
+  "fixture_revision": "17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560",
+  "transaction": {
+    "label": "first-release",
+    "action": "evaluate",
+    "hash": "0x8393397882fc74aac18ab1925702b7b6c161d0dac5a0e9c910342ac1dc43eee5"
+  },
+  "holders": [
+    "0xaa01eecb17d2f8b55a5f7ce13ec0e25884d15921",
+    "0x1111111111111111111111111111111111111111",
+    "0x2222222222222222222222222222222222222222"
+  ],
+  "balances": [
+    20,
+    13,
+    0
+  ],
+  "state": {
+    "allocations": [
+      61,
+      40
+    ],
+    "attempts": [
+      {
+        "checkpoint": 0,
+        "deltas": [
+          0,
+          0
+        ],
+        "outcome": "BLOCKED",
+        "report": {
+          "checks": [
+            {
+              "decision": "NOT_MET",
+              "id": "release",
+              "quote": "Beacon v1 remains unreleased; no public downloadable artifact exists yet."
+            },
+            {
+              "decision": "NOT_MET",
+              "id": "reproducible",
+              "quote": "The independent byte-for-byte build of Beacon v1 is scheduled for next week and has not run."
+            }
+          ]
+        },
+        "sha256": "e0a6af430ddb04660fbe817d2842b83601a2ea5097110b3f63dbad02ccf34160",
+        "url": "https://raw.githubusercontent.com/ehsanisildur-ux/tranche-weave/17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560/records/planned.md"
+      },
+      {
+        "checkpoint": 0,
+        "deltas": [
+          0,
+          0
+        ],
+        "outcome": "REVIEW",
+        "report": {
+          "checks": [
+            {
+              "decision": "UNKNOWN",
+              "id": "release",
+              "quote": ""
+            },
+            {
+              "decision": "UNKNOWN",
+              "id": "reproducible",
+              "quote": ""
+            }
+          ]
+        },
+        "sha256": "6a201d962cfa77d413db45457fb6983b7eac521fcf297ba3ab120dddcb0b2394",
+        "url": "https://raw.githubusercontent.com/ehsanisildur-ux/tranche-weave/17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560/records/ambiguous.md"
+      },
+      {
+        "checkpoint": 0,
+        "deltas": [
+          20,
+          13
+        ],
+        "outcome": "RELEASED",
+        "report": {
+          "checks": [
+            {
+              "decision": "MET",
+              "id": "release",
+              "quote": "Beacon v1 was publicly released yesterday as a downloadable artifact."
+            },
+            {
+              "decision": "MET",
+              "id": "reproducible",
+              "quote": "An independent builder completed a fresh build of Beacon v1 and reproduced the published artifact byte for byte."
+            }
+          ]
+        },
+        "sha256": "629167beeb0304833206e0fed8dc387fd8f56419d75fca0c12b20f9c964bb1bb",
+        "url": "https://raw.githubusercontent.com/ehsanisildur-ux/tranche-weave/17d074b5d8e6e79f313a1ebc5c6c2fcdf0656560/records/release.md"
+      }
+    ],
+    "beneficiaries": [
+      "0xAa01eECb17d2F8B55A5f7cE13ec0E25884D15921",
+      "0x1111111111111111111111111111111111111111"
+    ],
+    "credited": [
+      20,
+      13
+    ],
+    "issued": 33,
+    "next_checkpoint": 1,
+    "policy": {
+      "checkpoints": [
+        {
+          "basis_points": 3333,
+          "conditions": [
+            {
+              "id": "release",
+              "rule": "Beacon v1 has been publicly released as a downloadable artifact, not merely planned, promised, or privately tested."
+            },
+            {
+              "id": "reproducible",
+              "rule": "An independent build of Beacon v1 has completed and reproduced the published artifact byte for byte."
+            }
+          ],
+          "subject": "Beacon v1 public release"
+        },
+        {
+          "basis_points": 6667,
+          "conditions": [
+            {
+              "id": "restore",
+              "rule": "A completed Beacon v1 restoration exercise recovered every archived record without any missing or corrupted record."
+            },
+            {
+              "id": "verification",
+              "rule": "The restored Beacon v1 archive passed a completed integrity verification against its original manifest."
+            }
+          ],
+          "subject": "Beacon v1 restoration exercise"
+        },
+        {
+          "basis_points": 10000,
+          "conditions": [
+            {
+              "id": "handover",
+              "rule": "The recipient operations team has explicitly accepted responsibility for operating Beacon v1 after a completed handover."
+            },
+            {
+              "id": "runbook",
+              "rule": "The recipient operations team has completed a rehearsal using the Beacon v1 runbook without assistance from the authors."
+            }
+          ],
+          "subject": "Beacon v1 handover"
+        }
+      ],
+      "source_repository": "ehsanisildur-ux/tranche-weave"
+    }
+  }
+}

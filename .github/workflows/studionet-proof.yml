@@ -1,5 +1,11 @@
 name: StudioNet proof
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      recover:
+        description: Read already-submitted final transaction; do not sign any writes
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -30,6 +36,7 @@ jobs:
           GENLAYER_CLI_PATH: ${{ github.workspace }}/node_modules/genlayer/dist/index.js
           TRANCHEWEAVE_PASSWORD_FILE: ${{ github.workspace }}/.secrets/account-password.txt
           TRANCHEWEAVE_ACCOUNT: tranche-weave-proof
+          TRANCHEWEAVE_RECOVER: ${{ inputs.recover && '1' || '0' }}
         run: node scripts/prove-scenarios.cjs
       - uses: actions/upload-artifact@v4
         if: always()

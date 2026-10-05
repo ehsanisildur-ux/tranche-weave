@@ -7,7 +7,8 @@ const root = path.resolve(__dirname, '..');
 const cli = process.env.GENLAYER_CLI_PATH;
 const passwordFile = process.env.TRANCHEWEAVE_PASSWORD_FILE;
 const account = process.env.TRANCHEWEAVE_ACCOUNT;
-const address = process.env.TRANCHEWEAVE_DEPLOYER_ADDRESS;
+const recovering = process.env.TRANCHEWEAVE_RECOVER === '1';
+const address = recovering ? JSON.parse(fs.readFileSync(path.join(root,'proofs/second-release.json'),'utf8')).holders[0] : process.env.TRANCHEWEAVE_DEPLOYER_ADDRESS;
 if (!cli || !fs.existsSync(cli) || !passwordFile || !fs.existsSync(passwordFile) || !account || !/^0x[0-9a-f]{40}$/i.test(address || '')) throw Error('Set GENLAYER_CLI_PATH, TRANCHEWEAVE_PASSWORD_FILE, TRANCHEWEAVE_ACCOUNT and TRANCHEWEAVE_DEPLOYER_ADDRESS.');
 const password = fs.readFileSync(passwordFile, 'utf8').trim();
 const hook = path.join(__dirname, 'cli-config.cjs');
@@ -100,7 +101,10 @@ async function rpc(method, params) {
     if(!upstream.ok || !body.equals(Buffer.from(await upstream.arrayBuffer()))) throw Error('Fixture mismatch '+name);
     sources[name]={url,sha256:digest(body)};
   }
-  const deployed=result(await invoke('pool-deploy',['deploy']));
+  const prior=recovering?JSON.parse(fs.readFileSync(path.join(root,'proofs/second-release.json'),'utf8')):null;
+  const recovery=recovering?JSON.parse(fs.readFileSync(path.join(root,'config/recovery.json'),'utf8')):null;
+  if(recovering && (prior.source_sha256!==sourceHash || prior.contract_address!==recovery.contract_address)) throw Error('Recovery source or address mismatch');
+  const deployed=recovering?{'Contract Address':prior.contract_address,'Transaction Hash':JSON.parse(fs.readFileSync(path.join(proofs,'pool-deploy-receipt.json'),'utf8')).hash}:result(await invoke('pool-deploy',['deploy']));
   const contract=deployed['Contract Address'], deployHash=deployed['Transaction Hash'];
   await receipt('pool-deploy',deployHash);
   const transactions=[{label:'pool-deploy',action:'deploy',hash:deployHash}];
@@ -114,11 +118,17 @@ async function rpc(method, params) {
     {name:'final-release',method:'evaluate',source:'handover',index:2,credits:[61,40],balances:[54,40,7],next:3,outcome:'RELEASED'},
   ];
   for(const step of steps) {
+    if(recovering && step.name!=='final-release') {
+      const recorded=JSON.parse(fs.readFileSync(path.join(proofs,step.name+'.json'),'utf8'));
+      if(recorded.contract_address!==contract || recorded.source_sha256!==sourceHash) throw Error('Historical proof mismatch');
+      transactions.push(recorded.transaction);
+      continue;
+    }
     // Leave room for receipt polls and shared gateway rate limits.
     await new Promise(resolve=>setTimeout(resolve,15000));
     const args=step.method==='evaluate'?[String(step.index),sources[step.source].url,sources[step.source].sha256]:[third,'7'];
-    const output=await invoke(step.name,['write',contract,step.method,'--args',...args]);
-    const hash=output.match(/Write Transaction Hash:\s*(0x[0-9a-f]{64})/i)?.[1];
+    const output=recovering?'':await invoke(step.name,['write',contract,step.method,'--args',...args]);
+    const hash=recovering?recovery.final_hash:output.match(/Write Transaction Hash:\s*(0x[0-9a-f]{64})/i)?.[1];
     if(!hash) throw Error('Missing write hash');
     await receipt(step.name,hash);
     transactions.push({label:step.name,action:step.method,hash});
