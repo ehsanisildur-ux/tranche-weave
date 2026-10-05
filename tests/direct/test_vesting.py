@@ -62,6 +62,11 @@ def test_self_transfer(vest,direct_vm,direct_alice):
     with direct_vm.expect_revert('Self transfer'):vest.transfer(addr(direct_alice),1)
 def test_unvested_balance(vest,direct_vm,direct_bob):
     with direct_vm.expect_revert('Insufficient'):vest.transfer(addr(direct_bob),1)
+def test_cli_address_values(vest,direct_vm,direct_charlie):
+    evaluate(vest,direct_vm,'release')
+    vest.transfer(direct_charlie,7)
+    assert vest.balance_of(direct_charlie)==7
+    assert vest.get_state()['issued']==33
 @pytest.mark.parametrize('decision',['NOT_MET','UNKNOWN'])
 def test_validator_exact_gate(vest,direct_vm,decision):
     evaluate(vest,direct_vm,'release')
